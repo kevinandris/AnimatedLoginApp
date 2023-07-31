@@ -72,9 +72,12 @@
     width: 3rem;
     border: 1px solid red;
     border-radius: 50%;
+
+    /* centre the x icon */
     display: flex;
     justify-content: center;
     align-items: center;
+
     cursor: pointer;
   }
   
@@ -90,6 +93,7 @@
   // Password Visibility Toggle
   .password {
     position: relative;
+
     .icon {
       position: absolute;
       top: 1rem;
