@@ -4,9 +4,11 @@ import Login from './Login';
 
 const AuthContainer = () => {
   return (
-    <div>
-        <Login/>
-    </div>
+    <section className='--flex-center --100vh --bg-grey'>
+        <div className="container box">
+            <Login/>
+        </div>
+    </section>
   )
 }
 

@@ -3,7 +3,7 @@ import loginImg from "../../assets/login.svg"
 
 const Login = () => {
   return (
-    <div className='main --flex-center'>
+    <div className='main-container --flex-center'>
 
         <div className="img-container">
             <img src={loginImg} alt="login" />
