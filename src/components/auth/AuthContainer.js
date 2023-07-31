@@ -6,35 +6,47 @@ import Reset from './Reset';
 
 const AuthContainer = () => {
 
-  const [login, setLogin] = useState(true)
-  const [register, setRegister] = useState(false)
-  const [reset, setReset] = useState(false)
+  const [auth, setAuth] = useState({
+    login: true,
+    register: false,
+    reset: false,
+  })
+
+  // const [login, setLogin] = useState(true)
+  // const [register, setRegister] = useState(false)
+  // const [reset, setReset] = useState(false)
+
+  const handleLogin = () => {
+
+    setAuth( {login: true, register: false, reset: false} )
+    
+    // setReset(false)
+    // setRegister(false)
+    // setLogin(true)
+  }
 
   const handleRegister = () => {
-    setLogin(false)
-    setReset(false)
-    setRegister(true)
+    setAuth( {login: false, register: true, reset: false} )
+    // setLogin(false)
+    // setReset(false)
+    // setRegister(true)
   }
 
   const handleReset = () => {
-    setLogin(false)
-    setRegister(false)
-    setReset(true)
+    setAuth( {login: false, register: false, reset: true} )
+    // setLogin(false)
+    // setRegister(false)
+    // setReset(true)
   }
 
-  const handleLogin = () => {
-    setReset(false)
-    setRegister(false)
-    setLogin(true)
-  }
   
   return (
     <section className='--flex-center --100vh'>
         <div className="container box">
 
-          { login && <Login onRegister={handleRegister} onReset={handleReset}/> }
-          { register && <Register onLogin={handleLogin}/> }
-          { reset && <Reset  onLogin={handleLogin}/> }
+          { auth.login && <Login onRegister={handleRegister} onReset={handleReset}/> }
+          { auth.register && <Register onLogin={handleLogin}/> }
+          { auth.reset && <Reset  onLogin={handleLogin}/> }
           
         </div>
     </section>
