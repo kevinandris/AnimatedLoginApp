@@ -6,10 +6,15 @@ import { FaCheck } from "react-icons/fa"
 
 const Register = ({onLogin}) => {
 
-  const [showPassword, setShowPassword] = useState(false)
+  const [showPassword, setShowPassword] = useState(false);
+  const [showIndicator, setShowIndicator] = useState(false);
 
   const handleTogglePassword = () => {
     setShowPassword(!showPassword)
+  };
+
+  const handleShowIndicator = () => {
+    setShowIndicator(true);
   }
   
   return (
@@ -23,7 +28,12 @@ const Register = ({onLogin}) => {
 
                 {/* //  ! PASSWORD FIELD */}
                 <div className="password">
-                  <input type={showPassword ? "text" : "password"} className='--width-100' placeholder='Password'/>
+                  <input 
+                    type={showPassword ? "text" : "password"} 
+                    className='--width-100' 
+                    placeholder='Password'
+                    onFocus={handleShowIndicator}  
+                    />
 
                   <span className="icon" onClick={handleTogglePassword}>
                     {showPassword ? <AiOutlineEyeInvisible/> : (<AiOutlineEye />)}
@@ -34,7 +44,7 @@ const Register = ({onLogin}) => {
                 <span className='--text-sm --block'>Have an account? {" "}<a href="#" className='--text-sm' onClick={onLogin}>Login</a></span>
 
                 {/* //! Pass Strength Indicator */}
-                <div>
+                <div className={showIndicator ? "show-indicator" : "hide-indicator"}>
                       <ul className='--list-style-none --card --bg-grey --text-sm --p'>
                         <p className='--text-sm'>Password Strength Indicator</p>
                         <li>
