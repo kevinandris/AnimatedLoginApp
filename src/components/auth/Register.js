@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import RegisterImg from '../../assets/register.svg'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
+import { GoDotFill } from "react-icons/go"
+import { FaCheck } from "react-icons/fa"
 
 const Register = ({onLogin}) => {
 
@@ -30,6 +32,38 @@ const Register = ({onLogin}) => {
 
                 <button className="--btn --btn-primary --btn-block">Register</button>
                 <span className='--text-sm --block'>Have an account? {" "}<a href="#" className='--text-sm' onClick={onLogin}>Login</a></span>
+
+                {/* //! Pass Strength Indicator */}
+                <div>
+                      <ul>
+                        <p>Password Strength Indicator</p>
+                        <li>
+                        <span>
+
+                          <GoDotFill />
+                          &nbsp; Lowercase & Uppercase
+                        </span>
+                        </li>
+                        <li>
+                          <span>
+                            <GoDotFill />
+                            &nbsp; Numbers (0-9)
+                          </span>
+                        </li>
+                        <li>
+                        <span>
+                            <GoDotFill />
+                            &nbsp; Special Character (!@#$%^&*)
+                        </span>
+                        </li>
+                        <li>
+                        <span>
+                            <GoDotFill />
+                            &nbsp; At least 8 Character
+                        </span>
+                        </li>
+                      </ul>
+                    </div>
             </form>
         </div>
 
