@@ -36,6 +36,27 @@ const Register = ({onLogin}) => {
     } else {
       setPassLetter(false)
     }
+
+    // check for numbers
+    if (pass.match(/[0-9]/)) {
+      setPassNumber(true)
+    } else {
+      setPassNumber(false)
+    }
+
+    // Check for special char
+    if (pass.match(/([!,@,#,$,%,^,&,*,?,_,~])/)) {
+      setPassChar(true)
+    } else {
+      setPassChar(false)
+    }
+
+    // Check password length
+    if (pass.length > 7 ) {
+      setPassLength(true)
+    } else {
+      setPassLength(false)
+    }
   }, [pass])
 
   return (
@@ -70,30 +91,35 @@ const Register = ({onLogin}) => {
                 <div className={showIndicator ? "show-indicator" : "hide-indicator"}>
                       <ul className='--list-style-none --card --bg-grey --text-sm --p'>
                         <p className='--text-sm'>Password Strength Indicator</p>
+
                         <li className={passLetter ? "pass-green" : "pass-red"}>
                           <span className='--align-center'>
                             {passLetter ? <FaCheck /> : <GoDotFill />}
                             &nbsp; Lowercase & Uppercase
                           </span>
                         </li>
-                        <li>
+
+                        <li className={passNumber ? "pass-green" : "pass-red"}>
                           <span className='--align-center'>
-                            <GoDotFill />
+                            {passNumber ? <FaCheck /> : <GoDotFill />}
                             &nbsp; Numbers (0-9)
                           </span>
                         </li>
-                        <li>
+
+                        <li className={passChar ? "pass-green" : "pass-red"}>
                           <span className='--align-center'>
-                              <GoDotFill />
+                            {passChar ? <FaCheck /> : <GoDotFill />}
                               &nbsp; Special Character (!@#$%^&*)
                           </span>
                         </li>
-                        <li>
+
+                        <li className={passLength ? "pass-green" : "pass-red"}>
                           <span className='--align-center'>
-                              <GoDotFill />
-                              &nbsp; At least 8 Character
+                            {passLength ? <FaCheck /> : <GoDotFill />}
+                            &nbsp; At least 8 Character
                           </span>
                         </li>
+
                       </ul>
                     </div>
             </form>
