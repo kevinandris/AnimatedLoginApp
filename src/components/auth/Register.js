@@ -8,6 +8,8 @@ const Register = ({onLogin}) => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [showIndicator, setShowIndicator] = useState(false);
+  const [pass, setPass] = useState("");
+  
 
   const handleTogglePassword = () => {
     setShowPassword(!showPassword)
@@ -16,7 +18,12 @@ const Register = ({onLogin}) => {
   const handleShowIndicator = () => {
     setShowIndicator(true);
   }
-  
+
+  const handlePasswordChange = (e) => {
+    setPass(e.target.value)
+    console.log(pass);
+  }
+
   return (
     <div className='main-container --flex-center'>
 
@@ -32,7 +39,9 @@ const Register = ({onLogin}) => {
                     type={showPassword ? "text" : "password"} 
                     className='--width-100' 
                     placeholder='Password'
-                    onFocus={handleShowIndicator}  
+                    onFocus={handleShowIndicator}
+                    value={pass}
+                    onChange={handlePasswordChange}
                     />
 
                   <span className="icon" onClick={handleTogglePassword}>

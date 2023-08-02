@@ -17,11 +17,9 @@ const Login = ({ onRegister, onReset }) => {
                 <button className="--btn --btn-primary --btn-block">Login</button>
                 <a href="#" className='--text-sm' onClick={onReset}>Forgot password?</a>
                 <span className='--text-sm --block'>Don't have an account? 
-                  <a href="#" className='--text-sm' onClick={onRegister}>Register</a>
+                  <a href="#" className='--text-sm' onClick={onRegister}>&nbsp; Register</a>
                 </span>
-
                 
-
             </form>
         </div>
        
