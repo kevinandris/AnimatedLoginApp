@@ -35,32 +35,32 @@ const Register = ({onLogin}) => {
 
                 {/* //! Pass Strength Indicator */}
                 <div>
-                      <ul>
-                        <p>Password Strength Indicator</p>
+                      <ul className='--list-style-none --card --bg-grey --text-sm --p'>
+                        <p className='--text-sm'>Password Strength Indicator</p>
                         <li>
-                        <span>
+                          <span className='--align-center'>
 
-                          <GoDotFill />
-                          &nbsp; Lowercase & Uppercase
-                        </span>
+                            <GoDotFill />
+                            &nbsp; Lowercase & Uppercase
+                          </span>
                         </li>
                         <li>
-                          <span>
+                          <span className='--align-center'>
                             <GoDotFill />
                             &nbsp; Numbers (0-9)
                           </span>
                         </li>
                         <li>
-                        <span>
-                            <GoDotFill />
-                            &nbsp; Special Character (!@#$%^&*)
-                        </span>
+                          <span className='--align-center'>
+                              <GoDotFill />
+                              &nbsp; Special Character (!@#$%^&*)
+                          </span>
                         </li>
                         <li>
-                        <span>
-                            <GoDotFill />
-                            &nbsp; At least 8 Character
-                        </span>
+                          <span className='--align-center'>
+                              <GoDotFill />
+                              &nbsp; At least 8 Character
+                          </span>
                         </li>
                       </ul>
                     </div>
