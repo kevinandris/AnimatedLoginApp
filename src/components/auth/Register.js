@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import RegisterImg from '../../assets/register.svg'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 import { GoDotFill } from "react-icons/go"
@@ -9,8 +9,13 @@ const Register = ({onLogin}) => {
   const [showPassword, setShowPassword] = useState(false);
   const [showIndicator, setShowIndicator] = useState(false);
   const [pass, setPass] = useState("");
-  
 
+  const [passLetter, setPassLetter] = useState(false);
+  const [passNumber, setPassNumber] = useState(false);
+  const [passChar, setPassChar] = useState(false);
+  const [passLength, setPassLength] = useState(false);
+  const [passComplete, setPassComplete] = useState(false);
+  
   const handleTogglePassword = () => {
     setShowPassword(!showPassword)
   };
@@ -23,6 +28,15 @@ const Register = ({onLogin}) => {
     setPass(e.target.value)
     console.log(pass);
   }
+
+  useEffect(() => {
+    // Check lower and uppercase
+    if (pass.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) {
+      setPassLetter(true)
+    } else {
+      setPassLetter(false)
+    }
+  }, [pass])
 
   return (
     <div className='main-container --flex-center'>
@@ -56,10 +70,9 @@ const Register = ({onLogin}) => {
                 <div className={showIndicator ? "show-indicator" : "hide-indicator"}>
                       <ul className='--list-style-none --card --bg-grey --text-sm --p'>
                         <p className='--text-sm'>Password Strength Indicator</p>
-                        <li>
+                        <li className={passLetter ? "pass-green" : "pass-red"}>
                           <span className='--align-center'>
-
-                            <GoDotFill />
+                            {passLetter ? <FaCheck /> : <GoDotFill />}
                             &nbsp; Lowercase & Uppercase
                           </span>
                         </li>
