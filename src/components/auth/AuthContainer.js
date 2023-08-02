@@ -19,7 +19,6 @@ const AuthContainer = () => {
   const handleLogin = () => {
 
     setAuth( {login: true, register: false, reset: false} )
-    
     // setReset(false)
     // setRegister(false)
     // setLogin(true)
@@ -39,7 +38,6 @@ const AuthContainer = () => {
     // setReset(true)
   }
 
-  
   return (
     <section className='--flex-center --100vh'>
         <div className="container box">
