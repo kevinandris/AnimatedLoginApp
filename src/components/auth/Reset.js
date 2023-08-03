@@ -1,3 +1,4 @@
+// ! // ! child class
 import React from 'react'
 import resetImg from "../../assets/forgot.svg"
 import { AiOutlineClose } from 'react-icons/ai'

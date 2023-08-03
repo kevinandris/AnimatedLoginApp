@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import "./AuthContainer.scss";
 import Login from './Login';
+// ! Parent class
 import Register from './Register';
 import Reset from './Reset';
 

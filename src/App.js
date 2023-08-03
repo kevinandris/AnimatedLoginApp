@@ -1,3 +1,4 @@
+// ! Parent class
 import './App.scss';
 import AuthContainer from './components/auth/AuthContainer';
 
