@@ -14,6 +14,7 @@ const Register = ({onLogin}) => {
   const [passNumber, setPassNumber] = useState(false);
   const [passChar, setPassChar] = useState(false);
   const [passLength, setPassLength] = useState(false);
+
   const [passComplete, setPassComplete] = useState(false);
   
   const handleTogglePassword = () => {
@@ -57,7 +58,14 @@ const Register = ({onLogin}) => {
     } else {
       setPassLength(false)
     }
-  }, [pass])
+
+    // pass complete if the criteria has been met
+    if (passLetter && passNumber && passChar && passLength) {
+      setPassComplete(true)
+    } else {
+      setPassComplete(false)
+    }
+  }, [pass, passLetter, passNumber, passChar, passLength])
 
   return (
     <div className='main-container --flex-center'>
@@ -84,7 +92,7 @@ const Register = ({onLogin}) => {
                   </span>
                 </div>
 
-                <button className="--btn --btn-primary --btn-block">Register</button>
+                <button onClick={() => alert(pass)} disabled={!passComplete} className={passComplete ? "--btn --btn-primary --btn-block" : "--btn --btn-primary --btn-block btn-disabled"}>Register</button>
                 <span className='--text-sm --block'>Have an account? {" "}<a href="#" className='--text-sm' onClick={onLogin}>Login</a></span>
 
                 {/* //! Pass Strength Indicator */}
