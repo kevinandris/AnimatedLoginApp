@@ -4,6 +4,7 @@
        forth through a word link. 
     3) The logic for signing up is advanced which detects password's length, characters
        and numbers.
+    4) Multiple hooks used such as useState and useEffect.
 
 #   Project images:
     1) In register page without user's data
