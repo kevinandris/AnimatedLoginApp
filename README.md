@@ -22,5 +22,8 @@
 #   To run the project:
     In Visual Studio Code terminal, type npm start
 
+#   Dependancy installed:
+    1) Sass
+
 #   Things to improve:
     1) I want to learn more of CSS for better styling.
